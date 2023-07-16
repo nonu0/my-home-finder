@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<aside id="fh5co-hero" class="js-fullheight">
+			<div class="flexslider js-fullheight">
+				<ul class="slides">
+			   	<li style="background-image: url(images/img_bg_3.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+			   				<div class="slider-text-inner">
+			   						<h2 class="heading-title">Our Properties</h2>
+			   						<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>
+			   				</div>
+			   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+
+		<div id="fh5co-properties" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h3>Newest Properties</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+					</div>
+				</div>
+				{% for property in properties %}
+				<div class="row">
+					<div class="col-md-4 animate-box">
+						<div class="property">
+							<a href="#" class="fh5co-property" style="background-image: url(images/property-1.jpg);">
+								<span class="status">{{property.type}}</span>
+								<ul class="list-details">
+									<li>{{property.size}} ft sq<li>
+									<li>{{property.bedrooms}} Bedroom:</li>
+									<li>{{property.bathrooms}} Bathroom:</li>
+									<li>{{property.bathrooms}} Garage:</li>
+								</ul>
+							</a>
+							<div class="property-details">
+								<h3>Properties Near in Beach</h3>
+								<span class="price">${{property.price}}</span>
+								<p>{{property.description}}.</p>
+								<span class="address"><i class="icon-map"></i>{{property.location}}</span>
+							</div>
+						</div>
+					</div>
+					</div>
+					{% endfor %} 
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
